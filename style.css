@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-primary: 'Staatliches', sans-serif;
+  --ff-secundary: 'Palanquin', sans-serif;
+
+  --fc-header: hsla(0, 0%, 100%, 1);
+  --fc-p: hsla(274, 84%, 12%, 1);
+  --fc-card: hsla(232, 17%, 35%, 1);
+
+  --bg-h1: hsla(275, 18%, 79%, 1);
+  --bg-header: hsla(218, 17%, 62%, 1);
+  --bg-main: hsla(233, 100%, 97%, 1);
+  --bg-h2: hsla(312, 91%, 96%, 1);
+}
+
+body {
+  max-width: 38.4rem;
+  margin: auto;
+}
+
+header {
+  height: 27.9rem;
+  background-color: var(--bg-header);
+  text-align: center;
+}
+
+header img {
+  margin: 3.2rem auto 3.2rem;
+  width: 13.7rem;
+  height: 13.7rem;
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+  animation-name: topdown;
+  animation-duration: 900ms;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05rem;
+  color: var(--fc-header);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  animation-name: topdown;
+  animation-duration: 900ms;
+}
+
+.title {
+  background-color: var(--bg-h1);
+  height: 4.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: topdown;
+  animation-duration: 900ms;
+}
+
+main {
+  background-color: var(--bg-main);
+  padding: 1.4rem 3.2rem 6rem;
+}
+
+main p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: var(--ff-secundary);
+  color: var(--fc-p);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 1.4rem 0 6.3rem;
+  animation-name: emerge;
+  animation-duration: 900ms;
+}
+
+.card-group {
+  display: grid;
+  gap: 3.6rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  border-radius: 2rem;
+  transition: transform 200ms;
+  animation-name: downtop;
+  animation-duration: 900ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  color: var(--fc-card);
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: var(--bg-h2);
+  border-radius: 2rem;
+  padding: 1rem 2.4rem;
+  animation-name: rightleft;
+  animation-duration: 900ms;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rightleft {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(1);
+  }
+}
